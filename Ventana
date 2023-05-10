@@ -1,0 +1,34 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class Ventana extends Frame implements ActionListener {
+  
+  private Button boton;
+
+  public Ventana() {
+    super("Mi ventana");
+    
+    // Crear el botón
+    boton = new Button("Presionar");
+    
+    // Agregar el botón a la ventana
+    add(boton);
+    
+    // Asociar el botón con la acción que se ejecutará al presionarlo
+    boton.addActionListener(this);
+    
+    // Establecer el tamaño de la ventana y hacerla visible
+    setSize(200, 100);
+    setVisible(true);
+  }
+  
+  public void actionPerformed(ActionEvent evt) {
+    // Este método se ejecutará cuando se presione el botón
+    System.out.println("Hola mundo!");
+  }
+  
+  public static void main(String[] args) {
+    // Crear la ventana
+    Ventana ventana = new Ventana();
+  }
+}
